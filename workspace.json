@@ -1,10 +1,145 @@
 {
-  
-  
   "version": 2,
-  
-  "projects": {},
+  "projects": {
+    "ng-app": {
+      "projectType": "application",
+      "root": "apps/ng-app",
+      "sourceRoot": "apps/ng-app/src",
+      "prefix": "cesousan",
+      "targets": {
+        "build": {
+          "executor": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/ng-app",
+            "index": "apps/ng-app/src/index.html",
+            "main": "apps/ng-app/src/main.ts",
+            "polyfills": "apps/ng-app/src/polyfills.ts",
+            "tsConfig": "apps/ng-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/ng-app/src/favicon.ico",
+              "apps/ng-app/src/assets"
+            ],
+            "styles": [
+              "apps/ng-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/ng-app/src/environments/environment.ts",
+                  "with": "apps/ng-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ng-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ng-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "executor": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng-app:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/ng-app/src/**/*.ts",
+              "apps/ng-app/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/ng-app"
+          ],
+          "options": {
+            "jestConfig": "apps/ng-app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ng-app-e2e": {
+      "root": "apps/ng-app-e2e",
+      "sourceRoot": "apps/ng-app-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/ng-app-e2e/cypress.json",
+            "tsConfig": "apps/ng-app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "ng-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ng-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/ng-app-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  }
+    "defaultCollection": "@nrwl/angular"
+  },
+  "generators": {
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "defaultProject": "ng-app"
 }

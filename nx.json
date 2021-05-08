@@ -1,27 +1,18 @@
 {
   "npmScope": "cesousan",
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "main" },
   "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     ".eslintrc.json": "*"
   },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
-  "projects": {}
+  "projects": {
+    "ng-app": { "tags": [] },
+    "ng-app-e2e": { "tags": [], "implicitDependencies": ["ng-app"] }
+  }
 }
