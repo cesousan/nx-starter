@@ -29,7 +29,7 @@
               }
             ],
             "styles": [
-              "apps/ng-app/src/styles.scss"
+              "libs/shared/styles/src/index.scss"
             ],
             "scripts": []
           },
@@ -135,6 +135,22 @@
       "sourceRoot": "libs/shared/assets/src",
       "prefix": "cesousan",
       "targets": {}
+    },
+    "shared-styles": {
+      "projectType": "library",
+      "root": "libs/shared/styles",
+      "sourceRoot": "libs/shared/styles/src",
+      "prefix": "cesousan",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/styles/src/**/*.scss"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -1,3 +1,7 @@
 module.exports = {
-  projects: ['<rootDir>/apps/ng-app', '<rootDir>/libs/shared/assets'],
+  projects: [
+    '<rootDir>/apps/ng-app',
+    '<rootDir>/libs/shared/assets',
+    '<rootDir>/libs/shared/styles',
+  ],
 };
