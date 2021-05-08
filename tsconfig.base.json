@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@cesousan/shared/assets": ["libs/shared/assets/src/index.ts"],
-      "@cesousan/shared/styles": ["libs/shared/styles/src/index.ts"]
+      "@cesousan/shared/styles": ["libs/shared/styles/src/index.ts"],
+      "@cesousan/shared/environments": ["libs/shared/environments/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

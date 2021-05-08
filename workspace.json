@@ -37,8 +37,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/ng-app/src/environments/environment.ts",
-                  "with": "apps/ng-app/src/environments/environment.prod.ts"
+                  "replace": "libs/shared/environments/src/lib/environment.ts",
+                  "with": "libs/shared/environments/src/lib/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -148,6 +148,33 @@
             "lintFilePatterns": [
               "libs/shared/styles/src/**/*.scss"
             ]
+          }
+        }
+      }
+    },
+    "shared-environments": {
+      "projectType": "library",
+      "root": "libs/shared/environments",
+      "sourceRoot": "libs/shared/environments/src",
+      "prefix": "cesousan",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/environments/src/**/*.ts",
+              "libs/shared/environments/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/shared/environments"
+          ],
+          "options": {
+            "jestConfig": "libs/shared/environments/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
