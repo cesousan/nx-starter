@@ -17,8 +17,16 @@
             "tsConfig": "apps/ng-app/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "apps/ng-app/src/favicon.ico",
-              "apps/ng-app/src/assets"
+              {
+                "glob": "favicon.ico",
+                "input": "libs/shared/assets/src",
+                "output": "./"
+              },
+              {
+                "glob": "**/*",
+                "input": "libs/shared/assets/src/assets",
+                "output": "assets"
+              }
             ],
             "styles": [
               "apps/ng-app/src/styles.scss"
@@ -120,6 +128,13 @@
           }
         }
       }
+    },
+    "shared-assets": {
+      "projectType": "library",
+      "root": "libs/shared/assets",
+      "sourceRoot": "libs/shared/assets/src",
+      "prefix": "cesousan",
+      "targets": {}
     }
   },
   "cli": {
