@@ -16,6 +16,7 @@
     "ng-app-e2e": { "tags": [], "implicitDependencies": ["ng-app"] },
     "shared-assets": { "tags": ["scope:shared", "type:assets"] },
     "shared-styles": { "tags": ["scope:shared", "type:styles"] },
-    "shared-environments": { "tags": ["scope:shared", "type:environments"] }
+    "shared-environments": { "tags": ["scope:shared", "type:environments"] },
+    "shared-data-access": { "tags": ["scope:shared", "type:data-access"] }
   }
 }

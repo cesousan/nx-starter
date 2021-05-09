@@ -4,5 +4,6 @@ module.exports = {
     '<rootDir>/libs/shared/assets',
     '<rootDir>/libs/shared/styles',
     '<rootDir>/libs/shared/environments',
+    '<rootDir>/libs/shared/data-access',
   ],
 };
