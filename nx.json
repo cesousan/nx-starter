@@ -27,6 +27,14 @@
       "tags": [],
       "implicitDependencies": ["ng-app"]
     },
+    "react-app": {
+      "tags": [],
+      "implicitDependencies": ["shared-assets", "shared-styles"]
+    },
+    "react-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["react-app"]
+    },
     "shared-assets": {
       "tags": ["scope:shared", "type:assets"]
     },
@@ -38,13 +46,6 @@
     },
     "shared-data-access": {
       "tags": ["scope:shared", "type:data-access"]
-    },
-    "react-app": {
-      "tags": []
-    },
-    "react-app-e2e": {
-      "tags": [],
-      "implicitDependencies": ["react-app"]
     }
   }
 }

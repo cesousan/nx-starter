@@ -1,16 +1,16 @@
 import styles from './app.module.scss'
 
-import { ReactComponent as Logo } from './logo.svg'
-import star from './star.svg'
+import { environment } from '@cesousan/shared/environments'
+import { ReactComponent as Logo } from '../../../../libs/shared/assets/src/assets/images/nx-logo-white.svg'
 
-import { Route, Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 
 export function App() {
   return (
     <div className={styles.app}>
       <header className="flex">
         <Logo width="75" height="75" />
-        <h1>Welcome to react-app!</h1>
+        <h1>Welcome to react-app! {environment.production ? 'prod' : 'DEV'}</h1>
       </header>
       <main>
         <h2>Resources &amp; Tools</h2>
@@ -20,7 +20,7 @@ export function App() {
             {' '}
             If you like Nx, please give it a star:
             <div className="github-star-badge">
-              <img src={star} className="material-icons" alt="" />
+              <img src="/assets/images/star.svg" className="material-icons" alt="" />
               Star
             </div>
           </a>

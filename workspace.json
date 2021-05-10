@@ -154,77 +154,6 @@
         }
       }
     },
-    "shared-assets": {
-      "projectType": "library",
-      "root": "libs/shared/assets",
-      "sourceRoot": "libs/shared/assets/src",
-      "prefix": "cesousan",
-      "targets": {}
-    },
-    "shared-styles": {
-      "projectType": "library",
-      "root": "libs/shared/styles",
-      "sourceRoot": "libs/shared/styles/src",
-      "prefix": "cesousan",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/shared/styles/src/**/*.scss"]
-          }
-        }
-      }
-    },
-    "shared-environments": {
-      "projectType": "library",
-      "root": "libs/shared/environments",
-      "sourceRoot": "libs/shared/environments/src",
-      "prefix": "cesousan",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/shared/environments/src/**/*.ts",
-              "libs/shared/environments/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/environments"],
-          "options": {
-            "jestConfig": "libs/shared/environments/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "shared-data-access": {
-      "projectType": "library",
-      "root": "libs/shared/data-access",
-      "sourceRoot": "libs/shared/data-access/src",
-      "prefix": "cesousan",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/shared/data-access/src/**/*.ts",
-              "libs/shared/data-access/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/data-access"],
-          "options": {
-            "jestConfig": "libs/shared/data-access/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "react-app": {
       "root": "apps/react-app",
       "sourceRoot": "apps/react-app/src",
@@ -239,8 +168,19 @@
             "main": "apps/react-app/src/main.tsx",
             "polyfills": "apps/react-app/src/polyfills.ts",
             "tsConfig": "apps/react-app/tsconfig.app.json",
-            "assets": ["apps/react-app/src/favicon.ico", "apps/react-app/src/assets"],
-            "styles": ["apps/react-app/src/styles.scss"],
+            "assets": [
+              {
+                "glob": "favicon.ico",
+                "input": "libs/shared/assets/src",
+                "output": "./"
+              },
+              {
+                "glob": "**/*",
+                "input": "libs/shared/assets/src/assets",
+                "output": "assets"
+              }
+            ],
+            "styles": ["libs/shared/styles/src/index.scss"],
             "scripts": [],
             "webpackConfig": "@nrwl/react/plugins/webpack"
           },
@@ -248,8 +188,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/react-app/src/environments/environment.ts",
-                  "with": "apps/react-app/src/environments/environment.prod.ts"
+                  "replace": "libs/shared/environments/src/lib/environment.ts",
+                  "with": "libs/shared/environments/src/lib/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -318,6 +258,77 @@
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/react-app-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "shared-assets": {
+      "projectType": "library",
+      "root": "libs/shared/assets",
+      "sourceRoot": "libs/shared/assets/src",
+      "prefix": "cesousan",
+      "targets": {}
+    },
+    "shared-styles": {
+      "projectType": "library",
+      "root": "libs/shared/styles",
+      "sourceRoot": "libs/shared/styles/src",
+      "prefix": "cesousan",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/styles/src/**/*.scss"]
+          }
+        }
+      }
+    },
+    "shared-environments": {
+      "projectType": "library",
+      "root": "libs/shared/environments",
+      "sourceRoot": "libs/shared/environments/src",
+      "prefix": "cesousan",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/environments/src/**/*.ts",
+              "libs/shared/environments/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/environments"],
+          "options": {
+            "jestConfig": "libs/shared/environments/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-data-access": {
+      "projectType": "library",
+      "root": "libs/shared/data-access",
+      "sourceRoot": "libs/shared/data-access/src",
+      "prefix": "cesousan",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/data-access/src/**/*.ts",
+              "libs/shared/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/data-access"],
+          "options": {
+            "jestConfig": "libs/shared/data-access/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
