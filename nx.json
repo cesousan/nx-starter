@@ -12,7 +12,7 @@
     }
   },
   "projects": {
-    "ng-app": { "tags": [] },
+    "ng-app": { "tags": [], "implicitDependencies": ["shared-assets", "shared-styles"] },
     "ng-app-e2e": { "tags": [], "implicitDependencies": ["ng-app"] },
     "shared-assets": { "tags": ["scope:shared", "type:assets"] },
     "shared-styles": { "tags": ["scope:shared", "type:styles"] },
