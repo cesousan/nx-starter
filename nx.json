@@ -1,22 +1,50 @@
 {
-  "npmScope": "cesousan",
-  "affected": { "defaultBase": "main" },
   "implicitDependencies": {
-    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
     ".eslintrc.json": "*"
   },
+  "affected": {
+    "defaultBase": "main"
+  },
+  "npmScope": "cesousan",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
     }
   },
   "projects": {
-    "ng-app": { "tags": [], "implicitDependencies": ["shared-assets", "shared-styles"] },
-    "ng-app-e2e": { "tags": [], "implicitDependencies": ["ng-app"] },
-    "shared-assets": { "tags": ["scope:shared", "type:assets"] },
-    "shared-styles": { "tags": ["scope:shared", "type:styles"] },
-    "shared-environments": { "tags": ["scope:shared", "type:environments"] },
-    "shared-data-access": { "tags": ["scope:shared", "type:data-access"] }
+    "ng-app": {
+      "tags": [],
+      "implicitDependencies": ["shared-assets", "shared-styles"]
+    },
+    "ng-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["ng-app"]
+    },
+    "shared-assets": {
+      "tags": ["scope:shared", "type:assets"]
+    },
+    "shared-styles": {
+      "tags": ["scope:shared", "type:styles"]
+    },
+    "shared-environments": {
+      "tags": ["scope:shared", "type:environments"]
+    },
+    "shared-data-access": {
+      "tags": ["scope:shared", "type:data-access"]
+    },
+    "react-app": {
+      "tags": []
+    },
+    "react-app-e2e": {
+      "tags": [],
+      "implicitDependencies": ["react-app"]
+    }
   }
 }

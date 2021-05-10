@@ -5,5 +5,6 @@ module.exports = {
     '<rootDir>/libs/shared/styles',
     '<rootDir>/libs/shared/environments',
     '<rootDir>/libs/shared/data-access',
+    '<rootDir>/apps/react-app',
   ],
-};
+}

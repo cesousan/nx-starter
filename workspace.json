@@ -1,5 +1,39 @@
 {
   "version": 2,
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "ng-app",
+  "generators": {
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    },
+    "@nrwl/react": {
+      "application": {
+        "style": "scss",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "scss"
+      },
+      "library": {
+        "style": "scss",
+        "linter": "eslint"
+      }
+    }
+  },
   "projects": {
     "ng-app": {
       "projectType": "application",
@@ -28,9 +62,7 @@
                 "output": "assets"
               }
             ],
-            "styles": [
-              "libs/shared/styles/src/index.scss"
-            ],
+            "styles": ["libs/shared/styles/src/index.scss"],
             "scripts": []
           },
           "configurations": {
@@ -83,17 +115,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/ng-app/src/**/*.ts",
-              "apps/ng-app/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/ng-app/src/**/*.ts", "apps/ng-app/src/**/*.html"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/ng-app"
-          ],
+          "outputs": ["coverage/apps/ng-app"],
           "options": {
             "jestConfig": "apps/ng-app/jest.config.js",
             "passWithNoTests": true
@@ -122,9 +149,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/ng-app-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/ng-app-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -145,9 +170,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/shared/styles/src/**/*.scss"
-            ]
+            "lintFilePatterns": ["libs/shared/styles/src/**/*.scss"]
           }
         }
       }
@@ -169,9 +192,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/environments"
-          ],
+          "outputs": ["coverage/libs/shared/environments"],
           "options": {
             "jestConfig": "libs/shared/environments/jest.config.js",
             "passWithNoTests": true
@@ -196,35 +217,110 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/data-access"
-          ],
+          "outputs": ["coverage/libs/shared/data-access"],
           "options": {
             "jestConfig": "libs/shared/data-access/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
-    }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/angular"
-  },
-  "generators": {
-    "@nrwl/angular:application": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
     },
-    "@nrwl/angular:library": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest"
+    "react-app": {
+      "root": "apps/react-app",
+      "sourceRoot": "apps/react-app/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/react-app",
+            "index": "apps/react-app/src/index.html",
+            "main": "apps/react-app/src/main.tsx",
+            "polyfills": "apps/react-app/src/polyfills.ts",
+            "tsConfig": "apps/react-app/tsconfig.app.json",
+            "assets": ["apps/react-app/src/favicon.ico", "apps/react-app/src/assets"],
+            "styles": ["apps/react-app/src/styles.scss"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/react-app/src/environments/environment.ts",
+                  "with": "apps/react-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "react-app:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "react-app:build:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/react-app/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/react-app"],
+          "options": {
+            "jestConfig": "apps/react-app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     },
-    "@nrwl/angular:component": {
-      "style": "scss"
+    "react-app-e2e": {
+      "root": "apps/react-app-e2e",
+      "sourceRoot": "apps/react-app-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/react-app-e2e/cypress.json",
+            "tsConfig": "apps/react-app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "react-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "react-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/react-app-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
     }
-  },
-  "defaultProject": "ng-app"
+  }
 }
