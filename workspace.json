@@ -332,6 +332,25 @@
           }
         }
       }
+    },
+    "utils-types": {
+      "projectType": "library",
+      "root": "libs/utils/types",
+      "sourceRoot": "libs/utils/types/src",
+      "prefix": "cesousan",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/utils/types/src/**/*.ts", "libs/utils/types/src/**/*.html"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/utils/types"],
+          "options": { "jestConfig": "libs/utils/types/jest.config.js", "passWithNoTests": true }
+        }
+      }
     }
   }
 }

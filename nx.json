@@ -1,14 +1,9 @@
 {
   "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     ".eslintrc.json": "*"
   },
-  "affected": {
-    "defaultBase": "main"
-  },
+  "affected": { "defaultBase": "main" },
   "npmScope": "cesousan",
   "tasksRunnerOptions": {
     "default": {
@@ -44,8 +39,7 @@
     "shared-environments": {
       "tags": ["scope:shared", "type:environments"]
     },
-    "shared-data-access": {
-      "tags": ["scope:shared", "type:data-access"]
-    }
+    "shared-data-access": { "tags": ["scope:shared", "type:data-access"] },
+    "utils-types": { "tags": ["scope:utils", "type:types"] }
   }
 }
