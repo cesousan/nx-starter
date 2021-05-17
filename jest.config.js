@@ -7,5 +7,7 @@ module.exports = {
     '<rootDir>/libs/shared/data-access',
     '<rootDir>/apps/react-app',
     '<rootDir>/libs/utils/types',
+    '<rootDir>/libs/shared/ui-components-angular',
+    '<rootDir>/libs/shared/ui-components-react',
   ],
 }

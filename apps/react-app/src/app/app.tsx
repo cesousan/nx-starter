@@ -5,6 +5,8 @@ import { ReactComponent as Logo } from '../../../../libs/shared/assets/src/asset
 
 import { Link, Route } from 'react-router-dom'
 
+import { MyComponent } from '../../../../libs/shared/ui-components-react/src/'
+
 export function App() {
   return (
     <div className={styles.app}>
@@ -128,6 +130,8 @@ nx affected:e2e
         )}
       />
       {/* END: routes */}
+
+      <MyComponent></MyComponent>
     </div>
   )
 }

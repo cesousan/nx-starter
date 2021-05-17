@@ -1,22 +1,27 @@
 {
   "implicitDependencies": {
-    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
     ".eslintrc.json": "*"
   },
-  "affected": { "defaultBase": "main" },
+  "affected": {
+    "defaultBase": "main"
+  },
   "npmScope": "cesousan",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": ["build", "lint", "test", "e2e", "build-storybook"]
       }
     }
   },
   "projects": {
     "ng-app": {
       "tags": [],
-      "implicitDependencies": ["shared-assets", "shared-styles"]
+      "implicitDependencies": ["shared-assets", "shared-styles", "shared-ui-components"]
     },
     "ng-app-e2e": {
       "tags": [],
@@ -24,7 +29,7 @@
     },
     "react-app": {
       "tags": [],
-      "implicitDependencies": ["shared-assets", "shared-styles"]
+      "implicitDependencies": ["shared-assets", "shared-styles", "shared-ui-components"]
     },
     "react-app-e2e": {
       "tags": [],
@@ -39,7 +44,24 @@
     "shared-environments": {
       "tags": ["scope:shared", "type:environments"]
     },
-    "shared-data-access": { "tags": ["scope:shared", "type:data-access"] },
-    "utils-types": { "tags": ["scope:utils", "type:types"] }
+    "shared-data-access": {
+      "tags": ["scope:shared", "type:data-access"]
+    },
+    "utils-types": {
+      "tags": ["scope:utils", "type:types"]
+    },
+    "shared-ui-components": {
+      "tags": ["scope:shared", "type:ui"]
+    },
+    "shared-ui-components-e2e": {
+      "tags": [],
+      "implicitDependencies": ["shared-ui-components"]
+    },
+    "shared-ui-components-angular": {
+      "tags": []
+    },
+    "shared-ui-components-react": {
+      "tags": []
+    }
   }
 }

@@ -19,7 +19,11 @@
       "@cesousan/shared/styles": ["libs/shared/styles/src/index.ts"],
       "@cesousan/shared/environments": ["libs/shared/environments/src/index.ts"],
       "@cesousan/shared/data-access": ["libs/shared/data-access/src/index.ts"],
-      "@cesousan/utils/types": ["libs/utils/types/src/index.ts"]
+      "@cesousan/utils/types": ["libs/utils/types/src/index.ts"],
+      "@cesousan/shared/ui-components": ["dist/libs/shared/ui-components"],
+      "@cesousan/shared/ui-components/loader": ["dist/libs/shared/ui-components/loader"],
+      "@cesousan/shared/ui-components-angular": ["libs/shared/ui-components-angular/src/index.ts"],
+      "@cesousan/shared/ui-components-react": ["libs/shared/ui-components-react/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

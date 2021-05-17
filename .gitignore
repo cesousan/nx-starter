@@ -37,3 +37,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Generated output from Stencil wrappers
+libs/shared-ui-components-angular/**/generated
+libs/shared-ui-components-react/**/generated

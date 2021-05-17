@@ -348,7 +348,159 @@
         "test": {
           "executor": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/utils/types"],
-          "options": { "jestConfig": "libs/utils/types/jest.config.js", "passWithNoTests": true }
+          "options": {
+            "jestConfig": "libs/utils/types/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-ui-components": {
+      "root": "libs/shared/ui-components",
+      "sourceRoot": "libs/shared/ui-components/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nxext/stencil:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/shared/ui-components/stencil.config.ts",
+            "outputPath": "dist/libs/shared/ui-components"
+          },
+          "configurations": {
+            "production": {
+              "dev": false
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nxext/stencil:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/shared/ui-components/stencil.config.ts",
+            "outputPath": "dist/libs/shared/ui-components",
+            "serve": true,
+            "watch": true
+          }
+        },
+        "e2e": {
+          "executor": "@nxext/stencil:e2e",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "projectType": "library",
+            "configPath": "libs/shared/ui-components/stencil.config.ts",
+            "outputPath": "dist/libs/shared/ui-components"
+          }
+        },
+        "storybook": {
+          "executor": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/html",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/shared/ui-components/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "executor": "@nrwl/storybook:build",
+          "options": {
+            "uiFramework": "@storybook/html",
+            "outputPath": "dist/storybook/shared-ui-components",
+            "config": {
+              "configFolder": "libs/shared/ui-components/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      },
+      "generators": {
+        "@nxext/stencil:component": {
+          "style": "scss",
+          "storybook": true
+        }
+      }
+    },
+    "shared-ui-components-e2e": {
+      "root": "apps/shared-ui-components-e2e",
+      "sourceRoot": "apps/shared-ui-components-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/shared-ui-components-e2e/cypress.json",
+            "tsConfig": "apps/shared-ui-components-e2e/tsconfig.e2e.json",
+            "devServerTarget": "shared-ui-components:storybook"
+          },
+          "configurations": {
+            "ci": {
+              "devServerTarget": "shared-ui-components:storybook:ci"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/shared-ui-components-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "shared-ui-components-angular": {
+      "projectType": "library",
+      "root": "libs/shared/ui-components-angular",
+      "sourceRoot": "libs/shared/ui-components-angular/src",
+      "prefix": "cesousan",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/ui-components-angular"],
+          "options": {
+            "jestConfig": "libs/shared/ui-components-angular/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/ui-components-angular/src/**/*.ts",
+              "libs/shared/ui-components-angular/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "shared-ui-components-react": {
+      "root": "libs/shared/ui-components-react",
+      "sourceRoot": "libs/shared/ui-components-react/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/ui-components-react/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/ui-components-react"],
+          "options": {
+            "jestConfig": "libs/shared/ui-components-react/jest.config.js",
+            "passWithNoTests": true
+          }
         }
       }
     }
