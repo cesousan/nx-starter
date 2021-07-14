@@ -9,5 +9,6 @@ module.exports = {
     '<rootDir>/libs/utils/types',
     '<rootDir>/libs/shared/ui-components-angular',
     '<rootDir>/libs/shared/ui-components-react',
+    '<rootDir>/libs/shared/types',
   ],
 }

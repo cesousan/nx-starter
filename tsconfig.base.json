@@ -24,6 +24,7 @@
       "@hawk/shared/ui-components/loader": ["dist/libs/shared/ui-components/loader"],
       "@hawk/shared/ui-components-angular": ["libs/shared/ui-components-angular/src/index.ts"],
       "@hawk/shared/ui-components-react": ["libs/shared/ui-components-react/src/index.ts"],
+      "@hawk/shared/types": ["libs/shared/types/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

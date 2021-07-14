@@ -62,6 +62,9 @@
     },
     "shared-ui-components-react": {
       "tags": []
+    },
+    "shared-types": {
+      "tags": ["scope:shared", "type:types"]
     }
   }
 }
