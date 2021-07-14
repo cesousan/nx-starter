@@ -10,5 +10,11 @@ module.exports = {
     '<rootDir>/libs/shared/ui-components-angular',
     '<rootDir>/libs/shared/ui-components-react',
     '<rootDir>/libs/shared/types',
+    '<rootDir>/libs/shared/mappers',
+    '<rootDir>/libs/utils/dates',
+    '<rootDir>/libs/utils/observables',
+    '<rootDir>/libs/utils/arrays',
+    '<rootDir>/libs/utils/objects',
+    '<rootDir>/libs/utils/strings',
   ],
 }

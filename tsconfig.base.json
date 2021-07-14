@@ -19,12 +19,18 @@
       "@hawk/shared/styles": ["libs/shared/styles/src/index.ts"],
       "@hawk/shared/environments": ["libs/shared/environments/src/index.ts"],
       "@hawk/shared/data-access": ["libs/shared/data-access/src/index.ts"],
-      "@hawk/utils/types": ["libs/utils/types/src/index.ts"],
       "@hawk/shared/ui-components": ["dist/libs/shared/ui-components"],
       "@hawk/shared/ui-components/loader": ["dist/libs/shared/ui-components/loader"],
       "@hawk/shared/ui-components-angular": ["libs/shared/ui-components-angular/src/index.ts"],
       "@hawk/shared/ui-components-react": ["libs/shared/ui-components-react/src/index.ts"],
-      "@hawk/shared/types": ["libs/shared/types/src/index.ts"]
+      "@hawk/shared/types": ["libs/shared/types/src/index.ts"],
+      "@hawk/shared/mappers": ["libs/shared/mappers/src/index.ts"],
+      "@hawk/utils/dates": ["libs/utils/dates/src/index.ts"],
+      "@hawk/utils/observables": ["libs/utils/observables/src/index.ts"],
+      "@hawk/utils/types": ["libs/utils/types/src/index.ts"],
+      "@hawk/utils/arrays": ["libs/utils/arrays/src/index.ts"],
+      "@hawk/utils/objects": ["libs/utils/objects/src/index.ts"],
+      "@hawk/utils/strings": ["libs/utils/strings/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -47,9 +47,6 @@
     "shared-data-access": {
       "tags": ["scope:shared", "type:data-access"]
     },
-    "utils-types": {
-      "tags": ["scope:utils", "type:types"]
-    },
     "shared-ui-components": {
       "tags": ["scope:shared", "type:ui"]
     },
@@ -58,13 +55,34 @@
       "implicitDependencies": ["shared-ui-components"]
     },
     "shared-ui-components-angular": {
-      "tags": []
+      "tags": ["scope:shared", "type:ui", "framework: angular"]
     },
     "shared-ui-components-react": {
-      "tags": []
+      "tags": ["scope:shared", "type:ui", "framework: react"]
     },
     "shared-types": {
       "tags": ["scope:shared", "type:types"]
+    },
+    "shared-mappers": {
+      "tags": ["scope:shared", "type:functions"]
+    },
+    "utils-dates": {
+      "tags": ["scope:utils", "type:functions"]
+    },
+    "utils-observables": {
+      "tags": ["scope:utils", "type:functions"]
+    },
+    "utils-types": {
+      "tags": ["scope:utils", "type:types"]
+    },
+    "utils-arrays": {
+      "tags": ["scope:utils", "type:functions"]
+    },
+    "utils-objects": {
+      "tags": ["scope:utils", "type:functions"]
+    },
+    "utils-strings": {
+      "tags": ["scope:utils", "type:functions"]
     }
   }
 }
