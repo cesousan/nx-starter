@@ -5,7 +5,7 @@ import { ReactComponent as Logo } from '../../../../libs/shared/assets/src/asset
 
 import { Link, Route } from 'react-router-dom'
 
-import { MyComponent } from '../../../../libs/shared/ui-components-react/src/'
+import { MyComponent } from '@hawk/shared/ui-components-react'
 
 export function App() {
   return (
