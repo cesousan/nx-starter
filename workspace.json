@@ -39,7 +39,7 @@
       "projectType": "application",
       "root": "apps/ng-app",
       "sourceRoot": "apps/ng-app/src",
-      "prefix": "cesousan",
+      "prefix": "hawk",
       "targets": {
         "build": {
           "executor": "@angular-devkit/build-angular:browser",
@@ -266,14 +266,14 @@
       "projectType": "library",
       "root": "libs/shared/assets",
       "sourceRoot": "libs/shared/assets/src",
-      "prefix": "cesousan",
+      "prefix": "hawk",
       "targets": {}
     },
     "shared-styles": {
       "projectType": "library",
       "root": "libs/shared/styles",
       "sourceRoot": "libs/shared/styles/src",
-      "prefix": "cesousan",
+      "prefix": "hawk",
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
@@ -287,7 +287,7 @@
       "projectType": "library",
       "root": "libs/shared/environments",
       "sourceRoot": "libs/shared/environments/src",
-      "prefix": "cesousan",
+      "prefix": "hawk",
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
@@ -312,7 +312,7 @@
       "projectType": "library",
       "root": "libs/shared/data-access",
       "sourceRoot": "libs/shared/data-access/src",
-      "prefix": "cesousan",
+      "prefix": "hawk",
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
@@ -337,7 +337,7 @@
       "projectType": "library",
       "root": "libs/utils/types",
       "sourceRoot": "libs/utils/types/src",
-      "prefix": "cesousan",
+      "prefix": "hawk",
       "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
@@ -462,7 +462,7 @@
       "projectType": "library",
       "root": "libs/shared/ui-components-angular",
       "sourceRoot": "libs/shared/ui-components-angular/src",
-      "prefix": "cesousan",
+      "prefix": "hawk",
       "targets": {
         "test": {
           "executor": "@nrwl/jest:jest",

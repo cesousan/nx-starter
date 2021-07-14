@@ -1,9 +1,7 @@
-import { NgModule } from "@angular/core";
-import { SharedDataAccessModule } from '@cesousan/shared/data-access'
+import { NgModule } from '@angular/core'
+import { SharedDataAccessModule } from '@hawk/shared/data-access'
 
 @NgModule({
-  imports: [
-    SharedDataAccessModule.forRoot()
-  ]
+  imports: [SharedDataAccessModule.forRoot()],
 })
 export class CoreModule {}

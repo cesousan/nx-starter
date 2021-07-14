@@ -9,7 +9,7 @@
   "affected": {
     "defaultBase": "main"
   },
-  "npmScope": "cesousan",
+  "npmScope": "hawk",
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",

@@ -16,7 +16,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "cesousan",
+            "prefix": "hawk",
             "style": "camelCase"
           }
         ],
@@ -24,7 +24,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "cesousan",
+            "prefix": "hawk",
             "style": "kebab-case"
           }
         ]

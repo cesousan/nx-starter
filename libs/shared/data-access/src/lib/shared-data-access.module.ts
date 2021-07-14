@@ -1,5 +1,5 @@
 import { ModuleWithProviders, NgModule } from '@angular/core'
-import { environment } from '@cesousan/shared/environments'
+import { environment } from '@hawk/shared/environments'
 import { EffectsModule } from '@ngrx/effects'
 import { StoreRouterConnectingModule } from '@ngrx/router-store'
 import { StoreModule } from '@ngrx/store'

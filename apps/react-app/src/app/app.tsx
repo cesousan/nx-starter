@@ -1,6 +1,6 @@
 import styles from './app.module.scss'
 
-import { environment } from '@cesousan/shared/environments'
+import { environment } from '@hawk/shared/environments'
 import { ReactComponent as Logo } from '../../../../libs/shared/assets/src/assets/images/nx-logo-white.svg'
 
 import { Link, Route } from 'react-router-dom'

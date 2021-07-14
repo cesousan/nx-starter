@@ -1,5 +1,5 @@
 import { ActionReducerMap, MetaReducer } from '@ngrx/store'
-import { environment } from '@cesousan/shared/environments'
+import { environment } from '@hawk/shared/environments'
 
 import { debug } from './debug'
 
