@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 
-import { APIExampleA } from '@hawk/shared/types'
+import { ExampleA } from '@hawk/shared/types'
 
 @Component({
   selector: 'hawk-root',
@@ -9,8 +9,8 @@ import { APIExampleA } from '@hawk/shared/types'
 })
 export class AppComponent {
   title = 'ng-app'
-  ex: APIExampleA = {
-    first: 'Tito',
-    last: 'Zoubida',
+  ex: ExampleA = {
+    firstName: 'Tito',
+    lastName: 'Zoubida',
   }
 }

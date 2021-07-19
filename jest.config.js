@@ -16,5 +16,10 @@ module.exports = {
     '<rootDir>/libs/utils/arrays',
     '<rootDir>/libs/utils/objects',
     '<rootDir>/libs/utils/strings',
+    '<rootDir>/libs/shared/types/api',
+    '<rootDir>/libs/utils/types/adt/remote-data',
+    '<rootDir>/libs/utils/types/adt/maybe',
+    '<rootDir>/libs/utils/types/adt/result',
+    '<rootDir>/libs/utils/types/react',
   ],
 }

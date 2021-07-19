@@ -23,14 +23,18 @@
       "@hawk/shared/ui-components/loader": ["dist/libs/shared/ui-components/loader"],
       "@hawk/shared/ui-components-angular": ["libs/shared/ui-components-angular/src/index.ts"],
       "@hawk/shared/ui-components-react": ["libs/shared/ui-components-react/src/index.ts"],
-      "@hawk/shared/types": ["libs/shared/types/src/index.ts"],
       "@hawk/shared/mappers": ["libs/shared/mappers/src/index.ts"],
+      "@hawk/shared/types": ["libs/shared/types/front/src/index.ts"],
+      "@hawk/shared/types/api": ["libs/shared/types/api/src/index.ts"],
       "@hawk/utils/dates": ["libs/utils/dates/src/index.ts"],
       "@hawk/utils/observables": ["libs/utils/observables/src/index.ts"],
-      "@hawk/utils/types": ["libs/utils/types/src/index.ts"],
       "@hawk/utils/arrays": ["libs/utils/arrays/src/index.ts"],
       "@hawk/utils/objects": ["libs/utils/objects/src/index.ts"],
-      "@hawk/utils/strings": ["libs/utils/strings/src/index.ts"]
+      "@hawk/utils/strings": ["libs/utils/strings/src/index.ts"],
+      "@hawk/utils/types/adt/remote-data": ["libs/utils/types/adt/remote-data/src/index.ts"],
+      "@hawk/utils/types/adt/maybe": ["libs/utils/types/adt/maybe/src/index.ts"],
+      "@hawk/utils/types/adt/result": ["libs/utils/types/adt/result/src/index.ts"],
+      "@hawk/utils/types/react": ["libs/utils/types/react/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

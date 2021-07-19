@@ -60,20 +60,20 @@
     "shared-ui-components-react": {
       "tags": ["scope:shared", "type:ui", "framework: react"]
     },
-    "shared-types": {
-      "tags": ["scope:shared", "type:types"]
-    },
     "shared-mappers": {
       "tags": ["scope:shared", "type:functions"]
+    },
+    "shared-types-front": {
+      "tags": ["scope:shared", "type:types"]
+    },
+    "shared-types-api": {
+      "tags": ["scope:shared", "type:types"]
     },
     "utils-dates": {
       "tags": ["scope:utils", "type:functions"]
     },
     "utils-observables": {
       "tags": ["scope:utils", "type:functions"]
-    },
-    "utils-types": {
-      "tags": ["scope:utils", "type:types"]
     },
     "utils-arrays": {
       "tags": ["scope:utils", "type:functions"]
@@ -83,6 +83,18 @@
     },
     "utils-strings": {
       "tags": ["scope:utils", "type:functions"]
+    },
+    "utils-types-adt-remote-data": {
+      "tags": ["scope:utils", "type:types"]
+    },
+    "utils-types-adt-maybe": {
+      "tags": ["scope:utils", "type:types"]
+    },
+    "utils-types-adt-result": {
+      "tags": ["scope:utils", "type:types"]
+    },
+    "utils-types-react": {
+      "tags": ["scope:utils", "type:types"]
     }
   }
 }

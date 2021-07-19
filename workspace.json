@@ -274,14 +274,7 @@
       "root": "libs/shared/styles",
       "sourceRoot": "libs/shared/styles/src",
       "prefix": "hawk",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/shared/styles/src/**/*.scss"]
-          }
-        }
-      }
+      "targets": {}
     },
     "shared-environments": {
       "projectType": "library",
@@ -328,28 +321,6 @@
           "outputs": ["coverage/libs/shared/data-access"],
           "options": {
             "jestConfig": "libs/shared/data-access/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "utils-types": {
-      "projectType": "library",
-      "root": "libs/utils/types",
-      "sourceRoot": "libs/utils/types/src",
-      "prefix": "hawk",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/utils/types/src/**/*.ts", "libs/utils/types/src/**/*.html"]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/utils/types"],
-          "options": {
-            "jestConfig": "libs/utils/types/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -471,15 +442,6 @@
             "jestConfig": "libs/shared/ui-components-angular/jest.config.js",
             "passWithNoTests": true
           }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/shared/ui-components-angular/src/**/*.ts",
-              "libs/shared/ui-components-angular/src/**/*.html"
-            ]
-          }
         }
       }
     },
@@ -488,38 +450,11 @@
       "sourceRoot": "libs/shared/ui-components-react/src",
       "projectType": "library",
       "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/shared/ui-components-react/**/*.{ts,tsx,js,jsx}"]
-          }
-        },
         "test": {
           "executor": "@nrwl/jest:jest",
           "outputs": ["coverage/libs/shared/ui-components-react"],
           "options": {
             "jestConfig": "libs/shared/ui-components-react/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "shared-types": {
-      "root": "libs/shared/types",
-      "sourceRoot": "libs/shared/types/src",
-      "projectType": "library",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/shared/types/**/*.ts"]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/types"],
-          "options": {
-            "jestConfig": "libs/shared/types/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -646,6 +581,132 @@
           "outputs": ["coverage/libs/utils/strings"],
           "options": {
             "jestConfig": "libs/utils/strings/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-types-front": {
+      "root": "libs/shared/types/front",
+      "sourceRoot": "libs/shared/types/front/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/types/front/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/types/front"],
+          "options": {
+            "jestConfig": "libs/shared/types/front/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-types-api": {
+      "root": "libs/shared/types/api",
+      "sourceRoot": "libs/shared/types/api/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shared/types/api/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/types/api"],
+          "options": {
+            "jestConfig": "libs/shared/types/api/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "utils-types-adt-remote-data": {
+      "root": "libs/utils/types/adt/remote-data",
+      "sourceRoot": "libs/utils/types/adt/remote-data/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/utils/types/adt/remote-data/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/utils/types/adt/remote-data"],
+          "options": {
+            "jestConfig": "libs/utils/types/adt/remote-data/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "utils-types-adt-maybe": {
+      "root": "libs/utils/types/adt/maybe",
+      "sourceRoot": "libs/utils/types/adt/maybe/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/utils/types/adt/maybe/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/utils/types/adt/maybe"],
+          "options": {
+            "jestConfig": "libs/utils/types/adt/maybe/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "utils-types-adt-result": {
+      "root": "libs/utils/types/adt/result",
+      "sourceRoot": "libs/utils/types/adt/result/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/utils/types/adt/result/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/utils/types/adt/result"],
+          "options": {
+            "jestConfig": "libs/utils/types/adt/result/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "utils-types-react": {
+      "root": "libs/utils/types/react",
+      "sourceRoot": "libs/utils/types/react/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/utils/types/react/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/utils/types/react"],
+          "options": {
+            "jestConfig": "libs/utils/types/react/jest.config.js",
             "passWithNoTests": true
           }
         }
