@@ -1,11 +1,10 @@
-import styles from './app.module.scss'
-
-import { environment } from '@hawk/shared/environments'
-import { ReactComponent as Logo } from '../../../../libs/shared/assets/src/assets/images/nx-logo-white.svg'
-
 import { Link, Route } from 'react-router-dom'
 
+import { environment } from '@hawk/shared/environments'
 import { MyComponent } from '@hawk/shared/ui-components-react'
+
+import { ReactComponent as Logo } from '../../../../libs/shared/assets/src/assets/images/nx-logo-white.svg'
+import styles from './app.module.scss'
 
 export function App() {
   return (
